@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="carousel.js"></script>
+</head>
+
+<body>
+
+</body>
+
+</html>
+
+<div id="tnris-carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="15000">
+    <!-- Indicators -->
+    <ol id="indicators" class="carousel-indicators">
+        <li data-target="#tnris-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#tnris-carousel" data-slide-to="1"></li>
+        <li data-target="#tnris-carousel" data-slide-to="2"></li>
+        <li data-target="#tnris-carousel" data-slide-to="3"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div id="carousel-wrapper" class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+            <img class="d-block img-fluid" src="https://cdn.tnris.org/images/SavetheDate-2021.png"
+                alt="2021 GIS Forum Save the Date">
+        </div>
+        <div class="carousel-item">
+            <a href="https://data.tnris.org/collection/f84442b8-ac2a-4708-b5c0-9d15515f4483" target="_blank">
+                <img class="d-block img-fluid" src="https://cdn.tnris.org/images/cap_area_ortho_dam_banner_21:9.jpg"
+                    alt="StratMap 2019 CapArea Imagery">
+            </a>
+            <div class="carousel-caption">
+                <p>Imagery Preview - StratMap 2019 CapArea Imagery</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <a href="https://data.tnris.org/collection/66d886a6-13b9-46a9-936a-bf2ce4f71aaf" target="_blank">
+                <img class="d-block img-fluid" src="https://cdn.tnris.org/images/missouri_city_lidar_banner_21:9.jpg"
+                    alt="StratMap 2019 Missouri City Lidar">
+            </a>
+            <div class="carousel-caption">
+                <p>Lidar Preview - StratMap 2019 Missouri City</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <a href="https://data.tnris.org/collection/2679b514-bb7b-409f-97f3-ee3879f34448" target="_blank">
+                <img class="d-block img-fluid" src="https://cdn.tnris.org/images/tx_parcel_data_new_banner_21:9.jpg"
+                    alt="StratMap 2019 Texas Statewide Parcel Dataset">
+            </a>
+            <div class="carousel-caption">
+                <p>Data Preview - StratMap 2019 Texas Land Parcels</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="carousel-control-prev" href="#tnris-carousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#tnris-carousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
