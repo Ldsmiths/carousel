@@ -69,7 +69,6 @@ $(document).ready(function () {
         });
 
 });
--------
 
 // // get carousel images from tnris api
 // function retrieveCarousel(queryField, queryValue) {
