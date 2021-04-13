@@ -1,7 +1,7 @@
 // get training records from tnris api
 // inject training records into html; append html to template html
 function retrieveTraining(queryField, queryValue) {
-    var trainingUrl = 'https://api.tnris.org/api/v1/tnris_org/training';
+    var trainingUrl = 'https://api.tnris.org/api/v1/tnris_org/sgm_note';
     if (queryField) {
         trainingUrl = trainingUrl + "?" + queryField + "=" + queryValue;
     }
@@ -18,25 +18,25 @@ function retrieveTraining(queryField, queryValue) {
 
                 record.innerHTML =
                     `
-          <li class="post" data-category=${t.category}>
+          <li class="post" data-category=${t.document_name}>
           <article>
             <figure>
-            <img src=${t.title} alt=${t.title}>
+            <img src=${t.document_name} alt=${t.document_name}>
               </a>
               <figcaption>
                 <ol class="post-categories">
                   <li>
-                    <a href="">${t.category}</a>
+                    <a href="">${t.document_name}</a>
                   </li>
                 </ol>
                 <h2 class="post-title">
-                ${t.title}
+                ${t.document_name}
                   </a>
-                </h2><small>#${t.title}</small><br><br>
-                ${t.title}<br><br>
-                <b><u>Funding:</u></b> <small>${t.title}</small>
+                </h2><small>#${t.document_name}</small><br><br>
+                ${t.document_name}<br><br>
+                <b><u>Funding:</u></b> <small>${t.sgm_note}</small>
                 <br><br>
-                <a href="${t.title}" target="_blank"><button>More Info</button></a>
+                <a href="${t.sgm_note}" target="_blank"><button>More Info</button></a>
               </figcaption>
             </figure>
           </article>
@@ -91,7 +91,7 @@ $(document).ready(function () {
 //                     `
 //                 <h2>
 //                 ${t.document_name}
-//                 </h2><small>#${t.sgm_note}</small>
+//                 </h2><small>${t.sgm_note}</small>
 
 //         `;
 
