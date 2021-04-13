@@ -50,7 +50,7 @@ function retrieveTraining(queryField, queryValue) {
 }
 
 // run functions when on pipeline page
-if (location.pathname.includes('/pipeline')) {
+if (location.pathname.includes('/carousel')) {
     retrieveTraining();
 }
 
@@ -69,7 +69,6 @@ $(document).ready(function () {
         });
 
 });
-
 -------
 
 // // get carousel images from tnris api
