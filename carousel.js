@@ -55,6 +55,21 @@ if (location.pathname.includes('/pipeline')) {
 }
 
 
+
+$(document).ready(function () {
+
+    $("body").tooltip({
+        selector: "[data-toggle='tooltip']",
+        container: "body"
+    })
+        .popover({
+            selector: "[data-toggle='popover']",
+            container: "body",
+            html: true
+        });
+
+});
+
 -------
 
 // // get carousel images from tnris api
