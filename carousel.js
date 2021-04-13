@@ -1,10 +1,11 @@
-// get carousel images from tnris api
-function retrieveCarousel(queryField, queryValue) {
-    var carouselUrl = 'https://api.tnris.org/api/v1/tnris_org/sgm_note';
+// get training records from tnris api
+// inject training records into html; append html to template html
+function retrieveTraining(queryField, queryValue) {
+    var trainingUrl = 'https://api.tnris.org/api/v1/tnris_org/training';
     if (queryField) {
-        carouselUrl = carouselUrl + "?" + queryField + "=" + queryValue;
+        trainingUrl = trainingUrl + "?" + queryField + "=" + queryValue;
     }
-    return fetch(carouselUrl).then(function (response) {
+    return fetch(trainingUrl).then(function (response) {
         if (!response.ok) {
             throw new Error('Could not retrieve TNRIS API response for training events.');
         }
@@ -17,9 +18,29 @@ function retrieveCarousel(queryField, queryValue) {
 
                 record.innerHTML =
                     `
-                <h2>
-                ${t.document_name}
-                </h2><small>#${sgm_note}</small>
+          <li class="post" data-category=${t.category}>
+          <article>
+            <figure>
+            <img src=${t.title} alt=${t.title}>
+              </a>
+              <figcaption>
+                <ol class="post-categories">
+                  <li>
+                    <a href="">${t.category}</a>
+                  </li>
+                </ol>
+                <h2 class="post-title">
+                ${t.title}
+                  </a>
+                </h2><small>#${t.title}</small><br><br>
+                ${t.title}<br><br>
+                <b><u>Funding:</u></b> <small>${t.title}</small>
+                <br><br>
+                <a href="${t.title}" target="_blank"><button>More Info</button></a>
+              </figcaption>
+            </figure>
+          </article>
+        </li>  
   
         `;
 
@@ -29,8 +50,45 @@ function retrieveCarousel(queryField, queryValue) {
 }
 
 // run functions when on pipeline page
-if (location.pathname.includes('/carousel')) {
-    retrieveCarousel();
+if (location.pathname.includes('/pipeline')) {
+    retrieveTraining();
 }
 
+
+-------
+
+// // get carousel images from tnris api
+// function retrieveCarousel(queryField, queryValue) {
+//     var carouselUrl = 'https://api.tnris.org/api/v1/tnris_org/sgm_note';
+//     if (queryField) {
+//         carouselUrl = carouselUrl + "?" + queryField + "=" + queryValue;
+//     }
+//     return fetch(carouselUrl).then(function (response) {
+//         if (!response.ok) {
+//             throw new Error('Could not retrieve TNRIS API response for carousel images.');
+//         }
+//         return response.json();
+//     })
+//         .then(function (data) {
+//             data.results.forEach(function (t) {
+//                 // use api values to create clean variables to use in html below
+//                 var record = document.createElement('div');
+
+//                 record.innerHTML =
+//                     `
+//                 <h2>
+//                 ${t.document_name}
+//                 </h2><small>#${t.sgm_note}</small>
+
+//         `;
+
+//                 document.getElementById('insert-here').appendChild(record);
+//             });
+//         })
+// }
+
+// // run functions when on carousel page
+// if (location.pathname.includes('/carousel')) {
+//     retrieveCarousel();
+// }
 
