@@ -1,4 +1,3 @@
-
 // get carousel images from tnris api
 function retrieveCarousel(queryField, queryValue) {
     var carouselUrl = 'https://api.tnris.org/api/v1/tnris_org/sgm_note';
@@ -16,12 +15,10 @@ function retrieveCarousel(queryField, queryValue) {
                 // use api values to create clean variables to use in html below
                 $(document).ready(function () {
                     for (let j = 0; j < 1; j++) {
-                        $('<div class="carousel-item"><img src="https://cdn.tnris.org/images/cap_area_ortho_dam_banner_21:9.jpg"> <div class="carousel-caption"><p>' + t.document_id + '</p> </div>  </div>').appendTo('.carousel-inner');
+                        $('<div class="carousel-item"><img src="https://cdn.tnris.org/images/cap_area_ortho_dam_banner_21:9.jpg" alt="' + t.document_id + '"> <div class="carousel-caption"><p>' + t.document_name + '</p> </div>  </div>').appendTo('.carousel-inner');
 
                     }
-
                     $('.carousel-item').first().addClass('active');
-                    $('#carousel').carousel();
                 });
             });
 
@@ -33,11 +30,10 @@ function retrieveCarousel(queryField, queryValue) {
                 }
                 $('.carousel-indicators > li').first().addClass('active');
             });
-            console.log(data.count);
         })
 }
 
-// run functions when on pipeline page
+// run functions 
 if (location.pathname.includes('/carousel')) {
     retrieveCarousel();
 }

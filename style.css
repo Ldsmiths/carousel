@@ -305,4 +305,16 @@
     }
   }
   
-  
+  .carousel-item img {
+    width: 100%;
+    max-height: 475px;
+    object-fit: cover;
+    display: flex;
+
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    max-width: 1000px;
+  }
